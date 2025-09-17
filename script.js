@@ -1,8 +1,8 @@
 const canvas = document.getElementById('pingPongCanvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = 800;
-canvas.height = 600;
+canvas.width = 600; // Reduced width
+canvas.height = 400; // Reduced height
 
 // Game variables
 const PADDLE_WIDTH = 10;
@@ -11,23 +11,23 @@ const BALL_SIZE = 10;
 
 let playerPaddle = {
     x: 0,
-    y: (canvas.height - PADDLE_HEIGHT) / 2,
+    y: (canvas.height - PADDLE_HEIGHT) / 2, // Adjusted for new canvas height
     width: PADDLE_WIDTH,
     height: PADDLE_HEIGHT,
     dy: 0 // movement speed
 };
 
 let aiPaddle = {
-    x: canvas.width - PADDLE_WIDTH,
-    y: (canvas.height - PADDLE_HEIGHT) / 2,
+    x: canvas.width - PADDLE_WIDTH, // Adjusted for new canvas width
+    y: (canvas.height - PADDLE_HEIGHT) / 2, // Adjusted for new canvas height
     width: PADDLE_WIDTH,
     height: PADDLE_HEIGHT,
     dy: 0 // movement speed
 };
 
 let ball = {
-    x: canvas.width / 2,
-    y: canvas.height / 2,
+    x: canvas.width / 2, // Adjusted for new canvas width
+    y: canvas.height / 2, // Adjusted for new canvas height
     size: BALL_SIZE,
     dx: 5, // ball speed in x direction
     dy: 5  // ball speed in y direction
@@ -51,7 +51,7 @@ function drawCircle(x, y, radius, color) {
 
 function drawText(text, x, y, color) {
     ctx.fillStyle = color;
-    ctx.font = "75px Arial";
+    ctx.font = "50px Arial"; // Adjusted font size for smaller canvas
     ctx.fillText(text, x, y);
 }
 
@@ -62,8 +62,8 @@ function drawNet() {
 }
 
 function resetBall() {
-    ball.x = canvas.width / 2;
-    ball.y = canvas.height / 2;
+    ball.x = canvas.width / 2; // Adjusted for new canvas width
+    ball.y = canvas.height / 2; // Adjusted for new canvas height
     ball.dx = -ball.dx; // Serve in the opposite direction
     ball.dy = 5; // Reset vertical speed
 }
