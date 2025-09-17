@@ -151,6 +151,13 @@ document.addEventListener('keyup', e => {
     }
 });
 
+const playButton = document.getElementById('playButton');
+playButton.addEventListener('click', () => {
+    canvas.style.display = 'block'; // Show the canvas
+    playButton.style.display = 'none'; // Hide the play button
+    gameLoop(); // Start the game
+});
+
 function gameLoop() {
     update();
     draw();
@@ -158,7 +165,7 @@ function gameLoop() {
 }
 
 // Start the game loop
-gameLoop();
+// gameLoop(); // Comment out to prevent immediate start
 
 function draw() {
     // Clear canvas

@@ -1,3 +1,11 @@
+:root {
+    --primary-color: #00f0ff;
+    --secondary-color: #f000ff;
+    --dark-background: #1a1a2e;
+    --light-text: #e0e0e0;
+    --accent-glow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+}
+
 body {
     margin: 0;
     overflow: hidden;
@@ -5,10 +13,79 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #222;
+    background-color: var(--dark-background);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--light-text);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 4em;
+    color: var(--primary-color);
+    text-shadow: var(--accent-glow);
+    margin-bottom: 10px;
+}
+
+header .tagline {
+    font-size: 1.2em;
+    color: var(--light-text);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 canvas {
     background-color: #000;
-    border: 2px solid #fff;
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--accent-glow);
+    display: none; /* Hidden by default */
+    margin-bottom: 20px; /* Space between canvas and button */
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--dark-background);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: var(--accent-glow);
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 15px var(--secondary-color), 0 0 25px var(--secondary-color), 0 0 35px var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: var(--light-text);
 }
